@@ -1,4 +1,3 @@
 guidemo2013
 ===========
-
-ICS4U1-06
+This will teach people about JButton, JRadioButton, and JCheckbox
