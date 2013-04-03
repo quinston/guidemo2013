@@ -38,18 +38,18 @@ public class Guidemo2013 implements ActionListener {
 	}
 
 	private static void makeCheckboxListener() {
-		f.getContentPane().add(new CheckboxListener());	
-		ButtonListener b1 = new ButtonListener("Continue");
-		b1.addChangeListener(this);
+		CheckboxListener c = new CheckboxListener();
+		c.addActionListener(this);
+		f.getContentPane().add(c);	
+		ButtonListener b = new ButtonListener("Continue");
 		f.getContentPane().add(b1);
-
-
 	}
 
 	private static void makeRadioListener() {
-		f.getContentPane().add(new CheckboxListener());	
-		ButtonListener b1 = new ButtonListener("Continue");
-		b1.addChangeListener(this);
+		RadioListener c = new RadioListener();
+		c.addActionListener(this);
+		f.getContentPane().add(new RadioListener());	
+		ButtonListener b = new ButtonListener("Continue");
 		f.getContentPane().add(b1);
 }
 
