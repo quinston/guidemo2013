@@ -3,36 +3,30 @@ Quincy Lam, Ryan Marks, Stephen Wen
 
 */
 
-
-
 import javax.swing.JLabel;
 import javax.swing.JFrame;
+import javax.swing.JButton;
 
-public class Guidemo2013 {
-
-	private static void createAndShowGUI() {
-        //Create and set up the window.
-        JFrame frame = new JFrame("HelloWorldSwing");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
- 
-        //Add the ubiquitous "Hello World" label.
-        JLabel label = new JLabel("Hello World");
-        frame.getContentPane().add(label);
- 
-        //Display the window.
-        frame.pack();
-        frame.setVisible(true);
-    } 
-	
+public class Guidemo2013 implements ActionListener {
 	public static void main(String[] args) {
-	        //Schedule a job for the event-dispatching thread:
-	        //creating and showing this application's GUI.
-	        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-	            public void run() {
-	                createAndShowGUI();
-	            }
-	        });
-	        
+		JFrame f = new JFrame("Button Checkbox Radio Demo");
+		f.getContentPane().add(new CheckboxListener());	
+		ButtonListener b1 = new ButtonListener("Continue");
+		b1.addChangeListener(this);
+		f.getContentPane().add(b1);
+
+
+		f.getContentPane().add(new CheckboxListener());	
+		ButtonListener b2 = new ButtonListener("Continue");
+		b2.addChangeListener(this);
+		f.getContentPane().add(b2);
+
+		
+		f.pack();
+	}
+
+	public void actionPerformed (ActionEvent e) {
+		
 	}
 	
 };
