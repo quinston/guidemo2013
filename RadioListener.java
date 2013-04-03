@@ -33,21 +33,19 @@ public class RadioButton extends JPanel implements ActionListener
         for (int i = 0 ; i < buttons.length ; i++){//loop to initialize all the buttons
             buttons[i] = new JRadioButton("Button "+i);//creates the button, and names it
             buttons[i].addActionListener(this);//adds an actionlistener so we can tell if it is hit
-            buttons[i].setMnemonic(KeyEvent.VK_1 + i);//allows you to press a key instead of click
+            buttons[i].setMnemonic(KeyEvent.VK_1 + i-1);//allows you to press a key instead of click **HAVE TO PRESS ALT FOR IT TO WORK**
             panel.add(buttons[i]);//adds the button to the panel
             group.add(buttons[i]);//adds the button to the group so we can't select more than one
         }
-        
-
         add(panel, BorderLayout.LINE_START);
     }
     
-    public void actionPerformed(ActionEvent e){
-        if(buttons[choice].isSelected()){
-            label.setText("You hit the right button");
+    public void actionPerformed(ActionEvent e){//called when you click a button
+        if(buttons[choice].isSelected()){//checks if you selected the right button
+            label.setText("You hit the right button");//congratulates you
         }
-        else{
-            label.setText("That was the wrong button, please press button "+choice);
+        else{//if it isn't the right button
+            label.setText("That was the wrong button, please press button "+choice);//tells you to fix your mistake
         }
     }
 }
