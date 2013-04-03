@@ -12,7 +12,7 @@ import javax.swing.JComponent;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
 
-public class RadioButton extends JPanel implements ActionListener
+public class RadioListener extends JPanel implements ActionListener
 {
     protected JPanel panel;//the panel that this object will be placed on
     protected JLabel label;//the label to show whether or not you hit the right button
@@ -29,7 +29,7 @@ public class RadioButton extends JPanel implements ActionListener
         
         choice = (int)(Math.random()*group.getButtonCount ());//randomly selects a button you want to pick
         label.setText("Please click the "+choice+" button, or hit the " + choice + " key");//promts which button to press
-        add(label);//puts the label on the panel
+        add(label, BorderLayout.PAGE_START);//puts the label on the panel
         for (int i = 0 ; i < buttons.length ; i++){//loop to initialize all the buttons
             buttons[i] = new JRadioButton("Button "+i);//creates the button, and names it
             buttons[i].addActionListener(this);//adds an actionlistener so we can tell if it is hit
@@ -37,7 +37,7 @@ public class RadioButton extends JPanel implements ActionListener
             panel.add(buttons[i]);//adds the button to the panel
             group.add(buttons[i]);//adds the button to the group so we can't select more than one
         }
-        add(panel, BorderLayout.LINE_START);
+        add(panel, BorderLayout.CENTER);
     }
     
     public void actionPerformed(ActionEvent e){//called when you click a button
