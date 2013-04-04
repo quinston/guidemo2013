@@ -50,6 +50,6 @@ public class RadioListener  extends JPanel implements CorrectlyClicked, ActionLi
     }
 		
 	public boolean isCorrect() {
-		return false;
+		return buttons[choice].isSelected();
 	}
 }
