@@ -19,11 +19,10 @@ public class Guidemo2013 {
 
 		f = new GuidemoFrame();
 
-		f.addCheckboxListener();
 		f.addRadioListener();
-		f.setSize(new Dimension(400,400));	
+		f.pack();
 		f.setVisible(true);
 	}
 		
 	
-};
+}
