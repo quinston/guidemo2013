@@ -28,7 +28,7 @@ public class RadioListener  extends JPanel implements CorrectlyClicked, ActionLi
         buttons = new JRadioButton[(int)(Math.random()*9 + 2)];//creates an array of random length, different number of buttons every time
         
         choice = (int)(Math.random()*group.getButtonCount ());//randomly selects a button you want to pick
-        label.setText("Please click the "+choice+" button, or hit the " + choice + " key");//promts which button to press
+        label.setText("Please click the "+choice+" button, or hit " + choice + " + Alt");//promts which button to press
         add(label, BorderLayout.PAGE_START);//puts the label on the panel
         for (int i = 0 ; i < buttons.length ; i++){//loop to initialize all the buttons
             buttons[i] = new JRadioButton("Button "+i);//creates the button, and names it
@@ -41,7 +41,7 @@ public class RadioListener  extends JPanel implements CorrectlyClicked, ActionLi
     }
     
     public void actionPerformed(ActionEvent e){//called when you click a button
-        if(buttons[choice].isSelected()){//checks if you selected the right button
+        if(isCorrect()){//checks if you selected the right button
             label.setText("You hit the right button");//congratulates you
         }
         else{//if it isn't the right button
