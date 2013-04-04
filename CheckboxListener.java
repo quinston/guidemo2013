@@ -12,15 +12,16 @@ public class CheckboxListener extends JPanel implements ItemListener, CorrectlyC
 		setLayout(new BoxLayout(this,BoxLayout.PAGE_AXIS));
 
 
-		size=(int)Math.random()*9+1;
-		toCheck = (int)Math.random()*size + 1;
+		size=(int)(Math.random()*9)+1;
+		toCheck = (int)(Math.random()*size) + 1;
 		add(upperText = new JLabel("Tick "+toCheck+" boxes."));
 		boxes = new JCheckBox[size];
 		
 		for (int i=0;i<size;i++){
 		
-		boxes[i] = new JCheckBox(""+i);
+		boxes[i] = new JCheckBox();
 		boxes[i].setSelected(false);
+		boxes[i].addItemListener(this);
 		add(boxes[i]);
 		//boxes[i].addItemListener(this);
 		}

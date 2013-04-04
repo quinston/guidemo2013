@@ -7,7 +7,7 @@ public class ButtonListener implements ActionListener {
 
 	}
 	public void actionPerformed(ActionEvent e) {
-		if (Math.random() * 2 < 1) {
+		if (Math.random() * 3 < 1) {
 			Guidemo2013.f.addRadioListener();
 		}
 		else {
