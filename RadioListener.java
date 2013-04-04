@@ -40,7 +40,7 @@ public class RadioListener  extends JPanel implements CorrectlyClicked, ActionLi
             panel.add(buttons[i]);//adds the button to the panel
             group.add(buttons[i]);//adds the button to the group so we can't select more than one
         }
-        add(panel, BorderLayout.CENTER);
+        add(panel);
     }
     
     public void actionPerformed(ActionEvent e){//called when you click a button
