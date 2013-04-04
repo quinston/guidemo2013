@@ -6,60 +6,24 @@ import java.awt.event.*;
 import javax.swing.JLabel;
 import javax.swing.JFrame;
 import javax.swing.JButton;
-import java.awt.ActionEvent;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
 
-public interface CorrectlyClicked {
-	public boolean abc();
-}
 
-public class Guidemo2013 implements ActionListener {
-	static HashMap<CorrectlyClicked, ButtonListener> panelToButton;
+
+public class Guidemo2013 {
+	public static GuidemoFrame f;
 	public static void main(String[] args) {
-		HashMap<CorrectlyClicked, ButtonListener> panelToButton = new HashMap<CorrectlyClicked, ButtonListener>();
 
 
-		JFrame f = new JFrame("Button Checkbox Radio Demo");
+		f = new GuidemoFrame();
 
-		f.getContentPane().add(new CheckboxListener());	
-		//ButtonListener b1 = new ButtonListener("Continue");
-		//b1.addChangeListener(this);
-		//f.getContentPane().add(b1);
-
-
-		f.getContentPane().add(new CheckboxListener());	
-		//ButtonListener b2 = new ButtonListener("Continue");
-		//b2.addChangeListener(this);
-		//f.getContentPane().add(b2);
-
-		f.pack();
+		f.addCheckboxListener();
+		f.addRadioListener();
+		f.setSize(new Dimension(400,400));	
 		f.setVisible(true);
 	}
-
-	private static void makeCheckboxListener() {
-		CheckboxListener c = new CheckboxListener();
-		c.addActionListener(this);
-		f.getContentPane().add(c);	
-		ButtonListener b = new ButtonListener("Continue");
-		f.getContentPane().add(b1);
-	}
-
-	private static void makeRadioListener() {
-		RadioListener c = new RadioListener();
-		c.addActionListener(this);
-		f.getContentPane().add(new RadioListener());	
-		ButtonListener b = new ButtonListener("Continue");
-		f.getContentPane().add(b1);
-}
-
 		
-	// Enables button for CheckboxListener and RadioListener
-	public void actionPerformed (ActionEvent e) {
-		CorrectlyClicked src = (CorrectlyClicked) e.source;
-		if (src.abc()) {
-			panelToButton.get(src).setEnabled(true);
-		}
-	}
 	
 };

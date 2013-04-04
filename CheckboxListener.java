@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.lang.Math;
-public class CheckboxListener extends JToggleButton{
+public class CheckboxListener extends JPanel implements ItemListener, CorrectlyClicked{
 		private 
 		int size;
 		JCheckBox boxes[];
@@ -36,4 +36,10 @@ public class CheckboxListener extends JToggleButton{
 //		if (e.getStateChange() == ItemEvent.DESELECTED)
 
 	}
+
+	public boolean isCorrect() {
+		return false;
+	}
+
+	
 };

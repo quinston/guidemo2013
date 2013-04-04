@@ -12,15 +12,15 @@ import javax.swing.JComponent;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
 
-public class RadioListener extends JPanel implements ActionListener
-{
+public class RadioListener  extends JPanel implements CorrectlyClicked, ActionListener{
+
     protected JPanel panel;//the panel that this object will be placed on
     protected JLabel label;//the label to show whether or not you hit the right button
     protected ButtonGroup group;//the group of buttons used
     protected JRadioButton[] buttons;//the array of buttons in the group
     protected int choice;//the index of the button that should be chosen
     
-    public RadioButton (){
+    public RadioListener (){
     	//initializes all values
         panel = new JPanel (new GridLayout(0,1));
         label = new JLabel();
@@ -48,4 +48,8 @@ public class RadioListener extends JPanel implements ActionListener
             label.setText("That was the wrong button, please press button "+choice);//tells you to fix your mistake
         }
     }
+		
+	public boolean isCorrect() {
+		return false;
+	}
 }
